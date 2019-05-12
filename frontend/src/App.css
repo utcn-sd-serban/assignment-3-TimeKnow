@@ -1,0 +1,50 @@
+html{
+    height:100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body{
+    background-color:#1A1A1D;
+    height: 100%;
+}
+
+.link-hoverable:hover{
+    color: #1A1A1D !important;
+    background-color: aliceblue;
+    cursor: pointer !important;
+}
+
+.link-hoverable{
+    color: #5AB9EA;
+}
+
+.generic-text{
+    color: white;
+}
+
+.generic-text-dark{
+
+}
+
+.generic-text-colorful{
+    color: #5AB9EA;
+}
+
+.content-dark{
+    background-color:#1A1A1D !important;
+}
+
+.content-grey{
+    background-color: #282928 !important;
+}
+
+.content-white{
+    background-color: white !important;
+}
+
+.margin-left-1{
+    margin-left: 15px;
+}
