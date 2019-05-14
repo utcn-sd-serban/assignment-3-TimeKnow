@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f7245aa0-4a6f-4a4d-8325-9fd4abf4be41" name="Default Changelist" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/src/auth/ClientModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/navigation/NavigationManagement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rest/Command.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rest/PostCommandHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rest/RestClient.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rest/TagCommandHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rest/UserCommandHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PostModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PostModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/SearchModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SearchModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/TagModel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/UserModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presenter/NavigationManagementPresenter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presenter/PostManagementPresenter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenter/PostManagementPresenter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presenter/SearchManagementPresenter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenter/SearchManagementPresenter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presenter/UserManagementPresenter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenter/UserManagementPresenter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admindashboardcomponent/AdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/admindashboardcomponent/AdminDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admindashboardcomponent/SmartAdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/admindashboardcomponent/SmartAdminDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/dashboardcomponent/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/dashboardcomponent/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/dashboardcomponent/SmartDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/dashboardcomponent/SmartDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/homecomponent/SmartHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/homecomponent/SmartHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/homecomponent/SmartSearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/homecomponent/SmartSearchBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/navbarcomponent/SmartNavbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/navbarcomponent/SmartNavbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/postcomponent/PostResponder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/postcomponent/PostResponder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/postcomponent/QuestionAnswers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/postcomponent/QuestionAnswers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/postcomponent/QuestionPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/postcomponent/QuestionPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/postcomponent/SmartPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/postcomponent/SmartPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/querytablecomponent/SmartTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/querytablecomponent/SmartTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/querytablecomponent/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/querytablecomponent/Table.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>debug</find>
+      <find>summary</find>
+      <find>upVotes</find>
+      <find>NavigationManagementPresenter</find>
+      <find>'../../presenter/NavigationManagementPresenter'</find>
+      <find>debugger</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>upvotes</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Antonio &lt;antomadur@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/view/Form.js" />
+        <option value="$PROJECT_DIR$/src/view/SmartForm.js" />
+        <option value="$PROJECT_DIR$/src/view/Navbar.js" />
+        <option value="$PROJECT_DIR$/src/presenter/NavbarManagementPresenter.js" />
+        <option value="$PROJECT_DIR$/src/view/Navbar/SmartNavbar.js" />
+        <option value="$PROJECT_DIR$/src/view/userformcomponent/SmartForm.js" />
+        <option value="$PROJECT_DIR$/src/view/createpostcomponent/SmartCreatePostForm.js" />
+        <option value="$PROJECT_DIR$/src/view/postcomponent/AnswersPost.js" />
+        <option value="$PROJECT_DIR$/src/view/dashboardcomponent/DashboardEdit.html" />
+        <option value="$PROJECT_DIR$/src/view/editpostcomponent/SmartEditPost.js" />
+        <option value="$PROJECT_DIR$/src/view/editpostcomponent/EditPost.js" />
+        <option value="$PROJECT_DIR$/src/view/navbarcomponent/Navbar.js" />
+        <option value="$PROJECT_DIR$/src/view/homecomponent/HomeContent.js" />
+        <option value="$PROJECT_DIR$/src/view/homecomponent/SearchBar.js" />
+        <option value="$PROJECT_DIR$/src/view/createpostcomponent/CreatePostForm.js" />
+        <option value="$PROJECT_DIR$/src/view/userformcomponent/Form.js" />
+        <option value="$PROJECT_DIR$/src/seeder/seed.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/view/postcomponent/PostResponder.js" />
+        <option value="$PROJECT_DIR$/src/view/querytablecomponent/SmartTable.js" />
+        <option value="$PROJECT_DIR$/src/rest/Command.js" />
+        <option value="$PROJECT_DIR$/src/rest/PostCommand.js" />
+        <option value="$PROJECT_DIR$/src/view/querytablecomponent/Table.js" />
+        <option value="$PROJECT_DIR$/src/rest/TagCommandHandler.js" />
+        <option value="$PROJECT_DIR$/src/model/ClientModel.js" />
+        <option value="$PROJECT_DIR$/src/presenter/NavigationManagementPresenter.js" />
+        <option value="$PROJECT_DIR$/src/view/navbarcomponent/SmartNavbar.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/view/homecomponent/SmartHome.js" />
+        <option value="$PROJECT_DIR$/src/model/ImportModel.js" />
+        <option value="$PROJECT_DIR$/src/model/ImportAuxiliary.js" />
+        <option value="$PROJECT_DIR$/src/view/homecomponent/SmartSearchBar.js" />
+        <option value="$PROJECT_DIR$/src/view/dashboardcomponent/SmartDashboard.js" />
+        <option value="$PROJECT_DIR$/src/auth/ClientModel.js" />
+        <option value="$PROJECT_DIR$/src/model/SearchModel.js" />
+        <option value="$PROJECT_DIR$/src/presenter/SearchManagementPresenter.js" />
+        <option value="$PROJECT_DIR$/src/rest/RestClient.js" />
+        <option value="$PROJECT_DIR$/src/view/dashboardcomponent/Dashboard.js" />
+        <option value="$PROJECT_DIR$/src/view/postcomponent/SmartPost.js" />
+        <option value="$PROJECT_DIR$/src/model/TagModel.js" />
+        <option value="$PROJECT_DIR$/src/rest/PostCommandHandler.js" />
+        <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/view/postcomponent/QuestionPost.js" />
+        <option value="$PROJECT_DIR$/src/view/postcomponent/QuestionAnswers.js" />
+        <option value="$PROJECT_DIR$/src/presenter/PostManagementPresenter.js" />
+        <option value="$PROJECT_DIR$/src/model/PostModel.js" />
+        <option value="$PROJECT_DIR$/src/rest/UserCommandHandler.js" />
+        <option value="$PROJECT_DIR$/src/view/admindashboardcomponent/AdminDashboard.js" />
+        <option value="$PROJECT_DIR$/src/presenter/UserManagementPresenter.js" />
+        <option value="$PROJECT_DIR$/src/view/admindashboardcomponent/SmartAdminDashboard.js" />
+        <option value="$PROJECT_DIR$/src/model/UserModel.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1100" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="stackunderflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stackunderflow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stackunderflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stackunderflow" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="D:\Projects\React\stackunderflow\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\React\stackunderflow\src\auth" />
+      <recent name="D:\Projects\React\stackunderflow\src\navigation" />
+      <recent name="D:\Projects\React\stackunderflow\src\view\createpost" />
+      <recent name="D:\Projects\React\stackunderflow\src\view\query" />
+      <recent name="D:\Projects\React\stackunderflow\src\view\userform" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f7245aa0-4a6f-4a4d-8325-9fd4abf4be41" name="Default Changelist" comment="" />
+      <created>1553856290451</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553856290451</updated>
+      <workItem from="1553856296202" duration="1214000" />
+      <workItem from="1554117874866" duration="598000" />
+      <workItem from="1554290228862" duration="3628000" />
+      <workItem from="1554734129928" duration="1367000" />
+      <workItem from="1554823549976" duration="1105000" />
+      <workItem from="1554826227446" duration="1729000" />
+      <workItem from="1554905670291" duration="6179000" />
+      <workItem from="1554969330137" duration="598000" />
+      <workItem from="1555064115859" duration="19140000" />
+      <workItem from="1555141630029" duration="41405000" />
+      <workItem from="1555229867040" duration="20440000" />
+      <workItem from="1555266948070" duration="513000" />
+      <workItem from="1555438156759" duration="2612000" />
+      <workItem from="1555442815496" duration="599000" />
+      <workItem from="1555444794889" duration="1368000" />
+      <workItem from="1555510181903" duration="2667000" />
+      <workItem from="1555514779097" duration="938000" />
+      <workItem from="1555755477988" duration="3882000" />
+      <workItem from="1556050448208" duration="1032000" />
+      <workItem from="1556115002306" duration="786000" />
+      <workItem from="1556120244635" duration="607000" />
+      <workItem from="1557327860242" duration="518000" />
+      <workItem from="1557492513083" duration="1809000" />
+      <workItem from="1557514794131" duration="848000" />
+      <workItem from="1557561494317" duration="13198000" />
+      <workItem from="1557652092459" duration="34440000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1555262891779</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555262891779</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="163220000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22009254" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20679887" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.10906515" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22009254" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31444758" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.10906515" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/view/MainIndex.html" />
+    <entry file="file://$PROJECT_DIR$/src/view/Pagination.js" />
+    <entry file="file://$PROJECT_DIR$/src/view/SmartPostForm.js" />
+    <entry file="file://$PROJECT_DIR$/src/view/PostForm.js" />
+    <entry file="file://$PROJECT_DIR$/src/view/dashboardcomponent/DashboardEdit.html" />
+    <entry file="file://$PROJECT_DIR$/src/view/editpostcomponent/EditPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/maybe">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/homecomponent/SearchBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/userformcomponent/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/createpostcomponent/CreatePostForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="990" column="8" selection-start-line="990" selection-start-column="8" selection-end-line="990" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/homecomponent/HomeContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/createpostcomponent/SmartCreatePostForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/editpostcomponent/SmartEditPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Redux · A Predictable State Container for JS Apps.url" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/navbarcomponent/Navbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="62" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rest/Command.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/querytablecomponent/Table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="71" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/postcomponent/PostResponder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rest/TagCommandHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/navbarcomponent/SmartNavbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="37" column="60" lean-forward="true" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ImportAuxiliary.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/querytablecomponent/SmartTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/ClientModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/homecomponent/SmartSearchBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/homecomponent/SmartHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rest/RestClient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/dashboardcomponent/SmartDashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/dashboardcomponent/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="105" selection-start-line="18" selection-start-column="105" selection-end-line="18" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/seeder/seed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="52" selection-start-line="52" selection-end-line="65" selection-end-column="13" />
+          <folding>
+            <element signature="e#158#973#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/SearchModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="n#!!block;n#clear#0;n#SearchModel#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/navigation/NavigationManagement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/postcomponent/SmartPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/TagModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#1#39#0" expanded="true" />
+            <element signature="n#!!block;n#clearNewTag#0;n#TagModel#0" />
+            <element signature="n#!!block;n#createTag#0;n#TagModel#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/userformcomponent/SmartForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="20" column="47" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/postcomponent/QuestionPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/postcomponent/QuestionAnswers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/presenter/PostManagementPresenter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+            <element signature="n#!!block;n#onChangeTagsEvent#0;n#PostManagementPresenter#0" />
+            <element signature="n#!!block;n#onChangePropertyEvent#0;n#PostManagementPresenter#0" />
+            <element signature="n#!!block;n#onCreateQuestionEvent#0;n#PostManagementPresenter#0" />
+            <element signature="n#!!block;n#onCreateAnswerEvent#0;n#PostManagementPresenter#0" />
+            <element signature="n#!!block;n#refreshOwnerPostList#0;n#PostManagementPresenter#0" />
+            <element signature="n#!!block;n#refreshEditedPost#0;n#PostManagementPresenter#0" />
+            <element signature="n#!!block;n#onChangeEditedPostContentEvent#0;n#PostManagementPresenter#0" />
+            <element signature="n#!!block;n#onEditPostFinishedEvent#0;n#PostManagementPresenter#0" />
+            <element signature="n#!!block;n#editPostEvent#0;n#PostManagementPresenter#0" />
+            <element signature="n#!!block;n#deletePostEvent#0;n#PostManagementPresenter#0" />
+            <element signature="n#!!block;n#mapCurrentPostEvent#0;n#PostManagementPresenter#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/PostModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1144">
+          <caret line="59" column="28" lean-forward="true" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#PostModel#0" />
+            <element signature="n#!!block;n#importFromAPI#0;n#PostModel#0" />
+            <element signature="n#!!block;n#importFromSeed#0;n#PostModel#0" />
+            <element signature="n#!!block;n#changeOwnerPosts#0;n#PostModel#0" />
+            <element signature="n#!!block;n#clearNewPost#0;n#PostModel#0" />
+            <element signature="n#!!block;n#deletePost#0;n#PostModel#0" />
+            <element signature="n#!!block;n#editPost#0;n#PostModel#0" />
+            <element signature="n#!!block;n#changeEditedPostProperty#0;n#PostModel#0" />
+            <element signature="n#!!block;n#changeNewPostProperty#0;n#PostModel#0" />
+            <element signature="n#!!block;n#handleError#0;n#PostModel#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/presenter/SearchManagementPresenter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/admindashboardcomponent/SmartAdminDashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="86" selection-start-line="10" selection-start-column="86" selection-end-line="10" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/admindashboardcomponent/AdminDashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/UserModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="n#!!block;n#clearNewUser#0;n#UserModel#0" />
+            <element signature="n#!!block;n#changeProperty#0;n#UserModel#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/presenter/UserManagementPresenter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rest/PostCommandHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="122" column="16" lean-forward="true" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rest/UserCommandHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
