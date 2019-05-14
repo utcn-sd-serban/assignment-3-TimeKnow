@@ -81,7 +81,9 @@ class SearchModel extends EventEmitter {
     }
 
     handleError(data) {
-
+        if (data.status === 401 || data.status === 404 || data.status===409) {
+            data.body.then(x => {alert(x.type)});
+        }
     }
 }
 

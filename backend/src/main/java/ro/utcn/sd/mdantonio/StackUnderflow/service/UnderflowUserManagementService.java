@@ -2,6 +2,7 @@ package ro.utcn.sd.mdantonio.StackUnderflow.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
@@ -15,6 +16,7 @@ import ro.utcn.sd.mdantonio.StackUnderflow.dto.UserDTO;
 import ro.utcn.sd.mdantonio.StackUnderflow.entities.Post;
 import ro.utcn.sd.mdantonio.StackUnderflow.entities.UnderflowUser;
 import ro.utcn.sd.mdantonio.StackUnderflow.entities.Vote;
+import ro.utcn.sd.mdantonio.StackUnderflow.event.UserBannedEvent;
 import ro.utcn.sd.mdantonio.StackUnderflow.exception.BannedUserException;
 import ro.utcn.sd.mdantonio.StackUnderflow.exception.InvalidLoginException;
 import ro.utcn.sd.mdantonio.StackUnderflow.exception.InvalidPermissionException;
@@ -37,18 +39,23 @@ import static ro.utcn.sd.mdantonio.StackUnderflow.entities.StackUnderflowConstan
 @RequiredArgsConstructor
 public class UnderflowUserManagementService {
     private final RepositoryFactory repositoryFactory;
+    private final ApplicationEventPublisher eventPublisher;
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Transactional
     public UserDTO login(String username, String password) throws BannedUserException, InvalidLoginException {
         UnderflowUser user = repositoryFactory.createUnderflowUserRepository().findByUsername(username)
-                .orElseThrow(ObjectNotFoundExpection::new);
+                .orElseThrow(InvalidLoginException::new);
 
         if (user.isBanned())
             throw new BannedUserException();
         if (!passwordEncoder.matches(password, user.getPassword()))
             throw new InvalidLoginException();
+
+        user.setScore(ScoreLogicService.calculateScore(repositoryFactory, user.getUserid()));
+
         if (!user.getPermission().equals(ADMIN))
             return UserDTO.ofMinimalInformation(UserDTO.ofEntity(user));
         else
@@ -57,9 +64,10 @@ public class UnderflowUserManagementService {
 
     @Transactional
     public UserDTO addUnderflowUser(String username, String password, String email, boolean banned, String permission) {
-
-        return UserDTO.ofEntity(repositoryFactory.createUnderflowUserRepository().save(new UnderflowUser(
-                username, password, email, banned, permission)));
+        UnderflowUser user = repositoryFactory.createUnderflowUserRepository().save(new UnderflowUser(
+                username, password, email, banned, permission));
+        user.setScore(ScoreLogicService.calculateScore(repositoryFactory, user.getUserid()));
+        return UserDTO.ofEntity(user);
     }
 
     @Transactional
@@ -72,8 +80,10 @@ public class UnderflowUserManagementService {
             throw new InvalidPermissionException();
 
         UnderflowUser user = userRepository.findById(userId).orElseThrow(ObjectNotFoundExpection::new);
+        user.setScore(ScoreLogicService.calculateScore(repositoryFactory, user.getUserid()));
         user.setBanned(banned);
         userRepository.save(user);
+        eventPublisher.publishEvent(new UserBannedEvent(UserDTO.ofEntity(user)));
         return UserDTO.ofEntity(user);
     }
 
@@ -119,36 +129,12 @@ public class UnderflowUserManagementService {
         UnderflowUser currentUser = userRepository.findById(currentUserId).orElseThrow(ObjectNotFoundExpection::new);
 
         List<UnderflowUser> users = userRepository.findAll();
-        users.forEach(x -> x.setScore(calculateScore(x.getUserid())));
+        users.forEach(x -> x.setScore(ScoreLogicService.calculateScore(repositoryFactory, x.getUserid())));
         if (!currentUser.getPermission().equals(ADMIN))
             return new ArrayList<>();
         else
             return users.stream().map(UserDTO::ofEntity).collect(Collectors.toList());
     }
 
-    private long calculateScore(int userId) {
-        //I am not proud of this but is short
-        PostRepository postRepository = repositoryFactory.createPostRepository();
-        VoteRepository voteRepository = repositoryFactory.createVoteRepository();
-        List<Vote> allVotes = voteRepository.findAll();
-        long userDownVotes = allVotes.stream().filter(x -> x.getUserid().equals(userId)).filter(x -> !x.isUpvote()).count();
-        List<Post> postList = postRepository.findAll().stream().filter(x -> x.getAuthorid().
-                equals(userId)).collect(Collectors.toList());
 
-        //TODO: When I have time a more 'civilized' implementation will be made
-        long postScore = postList.stream().map(post -> {
-            Optional<Vote> postVote = allVotes.stream().filter(y -> y.getPostid().equals(post.getPostid())).findFirst();
-            return postVote.map(vote -> scoreLogic(post, vote)).orElse((long) 0);
-        }).mapToLong(x -> ((Number) x).longValue()).sum();
-
-        return postScore - userDownVotes;
-    }
-
-    private long scoreLogic(Post post, Vote vote) {
-        if (post.getPosttypeid().equals(QUESTIONID))
-            return vote.isUpvote() ? 5 : -2;
-        if (post.getPosttypeid().equals(ANSWERID))
-            return vote.isUpvote() ? 10 : -2;
-        return 0;
-    }
 }

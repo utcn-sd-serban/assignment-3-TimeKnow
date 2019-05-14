@@ -67,7 +67,8 @@ public class TagManagementService {
             throws ObjectNotFoundExpection, InvalidPermissionException, InvalidActionException {
         Post post = repositoryFactory.createPostRepository().findById(postId).orElseThrow(ObjectNotFoundExpection::new);
         UnderflowUser user = repositoryFactory.createUnderflowUserRepository().findById(currentUserId).orElseThrow(ObjectNotFoundExpection::new);
-        Tag tag = getTagByTitle(tagName).orElse(repositoryFactory.createTagRepository().save(new Tag(tagName)));
+        Optional<Tag> tagOptional = getTagByTitle(tagName);
+        Tag tag = tagOptional.orElseGet(() -> repositoryFactory.createTagRepository().save(new Tag(tagName)));
 
         if (!post.getPosttypeid().equals(QUESTIONID))
             throw new InvalidActionException();
@@ -75,6 +76,9 @@ public class TagManagementService {
         if (!post.getAuthorid().equals(user.getUserid()) && !user.getPermission().equals(ADMIN))
             throw new InvalidPermissionException();
 
+        if (repositoryFactory.createPostTagRepository().findAll().stream()
+                .anyMatch(x -> x.getPostid().equals(postId) && x.getTagid().equals(tag.getTagid())))
+            return;
 
         repositoryFactory.createPostTagRepository().save(new PostTag(postId, tag.getTagid()));
     }

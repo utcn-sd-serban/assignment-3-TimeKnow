@@ -7,13 +7,13 @@ const PostResponder = ({propertyContentMapper, onChangeResponseTextEvent, onPost
                 <div className="media-content">
                     <div className="field">
                         <p className="control">
-                            <textarea className="textarea" placeholder="Post an answer..."
+                            <textarea className="textarea" data-cy="post_responder_text" placeholder="Post an answer..."
                                       onChange={(e)=>(onChangeResponseTextEvent(propertyContentMapper.body, e.target.value))}/>
                         </p>
                     </div>
                     <div className="field">
                         <p className="control">
-                            <button className="button" onClick={onPostResponseEvent}>Post Answer</button>
+                            <button className="button" data-cy="post_responder_button" onClick={onPostResponseEvent}>Post Answer</button>
                         </p>
                     </div>
                 </div>

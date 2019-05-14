@@ -24,7 +24,7 @@ export default class RestClient {
         this.refreshAuthorization();
     }
 
-    logoutUser(username, password) {
+    logoutUser() {
         this.authorization = "None";
         this.userData = {"username": "", "password": ""};
         this.refreshAuthorization();

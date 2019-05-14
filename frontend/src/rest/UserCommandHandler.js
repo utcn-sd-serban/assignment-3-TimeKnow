@@ -30,7 +30,7 @@ export default class UserCommandHandler {
         }).then(response => {
             if (response.status === 200) {
                 return response.json();
-            } else return {"hasError": true, "status": response.status, "body": response.text()};
+            } else return {"hasError": true, "status": response.status, "body": response.json()};
         });
         return new Command(execution, null, null);
     }

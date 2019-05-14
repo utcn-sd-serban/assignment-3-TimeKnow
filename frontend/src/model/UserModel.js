@@ -102,15 +102,18 @@ class UserModel extends EventEmitter {
         const client = clientModel.getClient();
         const content = {"username": username, "password": password};
         client.requestAction(client.userCommandHandler.requests.LoginUser, content).then(data => {
-            debugger;
             if ("hasError" in data) {
                 this.handleError(data);
                 return;
             }
             this.state.currentUser = data;
+            this.state.newUser.username = "";
+            this.state.newUser.password = "";
             clientModel.setUserData(data);
             clientModel.loginUser(data.username, password);
-            NavigationManagement.gotoHome();
+            if (!data.banned) {
+                NavigationManagement.gotoHome();
+            }
             this.emit("change", this.state);
         });
     }
@@ -127,12 +130,34 @@ class UserModel extends EventEmitter {
     }
 
     handleError(data) {
+        if (data.status === 401 || data.status === 404 || data.status === 409 || data.status === 400) {
+            data.body.then(x => {
+                alert(x.type)
+            });
+        }
+    }
 
+    updateLocalUser(user) {
+        this.state.userList = this.state.userList.filter(x => x.id !== user.id);
+        this.state = {
+            ...this.state,
+            userList: this.state.userList.concat([user])
+        };
     }
 
 }
 
 const userModel = new UserModel();
-
+const listener = clientModel.getListener();
+listener.on("event", event => {
+    switch (event.type) {
+        case "USER_UPDATED":
+            userModel.updateLocalUser(event.userDTO);
+            break;
+        case "USER_BANNED":
+            userModel.updateLocalUser(event.userDTO);
+            break;
+    }
+});
 export default userModel;
 export {permissionAdmin, permissionUser};

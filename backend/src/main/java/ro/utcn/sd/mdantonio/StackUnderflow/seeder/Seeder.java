@@ -29,7 +29,7 @@ public class Seeder implements CommandLineRunner {
 
     @Override
     @Transactional
-    public void run(String... args) throws Exception {
+    public void run(String... args){
         UnderflowUserRepository userRepository = factory.createUnderflowUserRepository();
         PostRepository postRepository = factory.createPostRepository();
         PostTypeRepository postTypeRepository = factory.createPostTypeRepository();
@@ -107,7 +107,22 @@ public class Seeder implements CommandLineRunner {
             postTagRepository.save(new PostTag(posts.get(3).getPostid(), tags.get(3).getTagid()));
             postTagRepository.save(new PostTag(posts.get(4).getPostid(), tags.get(3).getTagid()));
         }
+    }
 
+    @Transactional
+    public void clear(){
+        UnderflowUserRepository userRepository = factory.createUnderflowUserRepository();
+        PostRepository postRepository = factory.createPostRepository();
+        PostTypeRepository postTypeRepository = factory.createPostTypeRepository();
+        VoteRepository voteRepository = factory.createVoteRepository();
+        TagRepository tagRepository = factory.createTagRepository();
+        PostTagRepository postTagRepository = factory.createPostTagRepository();
 
+        postTagRepository.findAll().forEach(postTagRepository::remove);
+        tagRepository.findAll().forEach(tagRepository::remove);
+        voteRepository.findAll().forEach(voteRepository::remove);
+        postRepository.findAll().forEach(postRepository::remove);
+        postTypeRepository.findAll().forEach(postTypeRepository::remove);
+        userRepository.findAll().forEach(userRepository::remove);
     }
 }

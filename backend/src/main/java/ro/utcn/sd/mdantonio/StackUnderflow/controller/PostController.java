@@ -2,9 +2,12 @@ package ro.utcn.sd.mdantonio.StackUnderflow.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.event.EventListener;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 import ro.utcn.sd.mdantonio.StackUnderflow.dto.PostDTO;
 import ro.utcn.sd.mdantonio.StackUnderflow.dto.VoteDTO;
+import ro.utcn.sd.mdantonio.StackUnderflow.event.BaseEvent;
 import ro.utcn.sd.mdantonio.StackUnderflow.service.PostManagementService;
 import ro.utcn.sd.mdantonio.StackUnderflow.service.TagManagementService;
 import ro.utcn.sd.mdantonio.StackUnderflow.service.UserSessionManagementService;
@@ -18,6 +21,7 @@ public class PostController {
     private final PostManagementService postManagementService;
     private final TagManagementService tagManagementService;
     private final UserSessionManagementService userSessionManagementService;
+    private final SimpMessagingTemplate messagingTemplate;
 
     @GetMapping("/posts")
     public List<PostDTO> readAllQuestions() {
@@ -63,7 +67,7 @@ public class PostController {
     }
 
     @GetMapping("/posts/editable")
-    public List<PostDTO> readAllAnswers() {
+    public List<PostDTO> readAllEditablePosts() {
         int currentUserId = userSessionManagementService.loadCurrentUser().getUserid();
         return postManagementService.listEditablePosts(currentUserId);
     }
@@ -85,5 +89,11 @@ public class PostController {
         int currentUserId = userSessionManagementService.loadCurrentUser().getUserid();
         postManagementService.removePost(currentUserId, dto.getPostId());
         return postManagementService.findPostById(dto.getPostId());
+    }
+
+    @EventListener(BaseEvent.class)
+    public void handleEvent(BaseEvent event) {
+        log.info("Got an event: {}.", event);
+        messagingTemplate.convertAndSend("/topic/events", event);
     }
 }

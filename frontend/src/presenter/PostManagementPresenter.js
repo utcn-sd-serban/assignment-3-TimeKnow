@@ -30,7 +30,7 @@ class PostManagementPresenter {
             "",
             postModel.state.newPost.body,
             userModel.state.currentUser,
-            postModel.state.currentPost,
+            postModel.state.currentPost.id,
             []);
         postModel.changeCurrentPost(postModel.state.currentPost.id);
         postModel.clearNewPost();

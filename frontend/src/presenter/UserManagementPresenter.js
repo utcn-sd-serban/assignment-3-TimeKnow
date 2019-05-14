@@ -14,8 +14,7 @@ class UserManagementPresenter {
     }
 
     onLogin() {
-        userModel.loginUser(userModel.state.newUser.username, userModel.state.newUser.password)
-        NavigationManagement.gotoHome();
+        userModel.loginUser(userModel.state.newUser.username, userModel.state.newUser.password);
     }
 
     onChange(property, value) {

@@ -18,7 +18,7 @@ const SearchBar = ({suggestions, propertyContentMapper, onPropertyChangeEvent, o
                         </p>
                         <div className="control has-icons-left is-expanded">
                             <form>
-                            <input className="input is-large is-fullwidth" type="text" autoComplete="Yes"
+                            <input className="input is-large is-fullwidth" type="text" autoComplete="Yes" data-cy="home_searchbar"
                                    placeholder="Search..." list="Suggestions"
                                    onChange={(e)=>onPropertyChangeEvent(propertyContentMapper.currentSearch, e.target.value)}
                             />
@@ -35,7 +35,7 @@ const SearchBar = ({suggestions, propertyContentMapper, onPropertyChangeEvent, o
                                 </span>
                         </div>
                         <div className="control">
-                            <div className="button is-info is-large" onClick={onSearchEvent}>Search</div>
+                            <div className="button is-info is-large" onClick={onSearchEvent} data-cy="home_searchbutton">Search</div>
                         </div>
                     </div>
                 </div>

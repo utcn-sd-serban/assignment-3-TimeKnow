@@ -10,13 +10,13 @@ const EditPost = ({postContent, onPropertyChangeEvent, onActionEvent}) =>(
                     </div>
                     <div className="field">
                         <p className="control has-icons-left">
-                            <textarea className="textarea" onChange={(e)=>onPropertyChangeEvent(e.target.value)}
+                            <textarea className="textarea" data-cy="edit_post_body" onChange={(e)=>onPropertyChangeEvent(e.target.value)}
                                      value={postContent} placeholder="Include details about your goals and problem"/>
                         </p>
                     </div>
                     <div className="field">
                         <p className="control">
-                            <button className="button is-success" onClick={()=>onActionEvent(postContent.id)}>
+                            <button className="button is-success" data-cy="edit_post_submit_button" onClick={()=>onActionEvent(postContent.id)}>
                                 Done
                             </button>
                         </p>

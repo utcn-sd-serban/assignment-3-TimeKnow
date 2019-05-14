@@ -10,8 +10,8 @@ const CreatePostForm = ({propertyContentMapper, onPropertyChangeEvent, onPropert
                             <label className="label generic-text">Your Question Title:</label>
                         </div>
                         <div className="control has-icons-left">
-                            <input className="input" type="text" onChange={(e)=>onPropertyChangeEvent(propertyContentMapper.title, e.target.value)}
-                                   placeholder="What's your programming question? Be specific."/>
+                            <input className="input" type="text" data-cy="form_question-title" onChange={(e)=>onPropertyChangeEvent(propertyContentMapper.title, e.target.value)}
+                                   placeholder="What's your programming question? Be specific." />
                                 <span className="icon is-small is-left">
                                     <i className="fas fa-heading"/>
                                 </span>
@@ -23,7 +23,7 @@ const CreatePostForm = ({propertyContentMapper, onPropertyChangeEvent, onPropert
                     <div className="field">
                         <p className="control has-icons-left">
                             <textarea className="textarea" onChange={(e)=>onPropertyChangeEvent(propertyContentMapper.body, e.target.value)}
-                                      placeholder="Include details about your goals and problem"/>
+                                      placeholder="Include details about your goals and problem" data-cy="form_question-body"/>
                         </p>
                     </div>
                     <div className="control">
@@ -32,7 +32,7 @@ const CreatePostForm = ({propertyContentMapper, onPropertyChangeEvent, onPropert
                     <div className="field">
                         <p className="control has-icons-left">
                             <input className="input" type="Text" onChange={(e)=>onPropertyTagsChangeEvent(e.target.value)}
-                                   placeholder="Tags help the right people find and answer your question."/>
+                                   placeholder="Tags help the right people find and answer your question." data-cy="form_question-tags"/>
                             <span className="icon is-small is-left">
                                 <i className="fas fa-tags"/>
                             </span>
@@ -40,7 +40,7 @@ const CreatePostForm = ({propertyContentMapper, onPropertyChangeEvent, onPropert
                     </div>
                     <div className="field">
                         <p className="control">
-                            <button className="button is-success" onClick={onActionEvent}>
+                            <button className="button is-success" data-cy="form_post_createbutton" onClick={onActionEvent} >
                                 Post
                             </button>
                         </p>

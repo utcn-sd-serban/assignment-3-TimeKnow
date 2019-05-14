@@ -15,8 +15,8 @@ const Table = ({tableHeader, tableContent, onContentSelected}) =>(
                 </thead>
                 <tbody>
                 {tableContent.map(content=>(
-                    <tr key={content.id}>
-                        <td className="has-text-centered"><div className="link-hoverable" onClick={()=>(onContentSelected(content.id))}>{content.title}</div></td>
+                    <tr key={content.id} data-cy="query_items">
+                        <td className="has-text-centered"><div className="link-hoverable" data-cy="query_items_res" onClick={()=>(onContentSelected(content.id))}>{content.title}</div></td>
                         <td className="has-text-centered">{content.body}</td>
                         <td className="has-text-centered">{content.upvotes}</td>
                         <td className="has-text-centered">{content.downvotes}</td>

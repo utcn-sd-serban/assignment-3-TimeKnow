@@ -1,0 +1,681 @@
+{
+	"info": {
+		"_postman_id": "4fc38bdd-f92d-44d5-bbd2-5038f4b1d71d",
+		"name": "Postman_Tests_2019",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8081/posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34ea7d85-9402-41dd-bddb-9bc3d13abf1d",
+						"exec": [
+							"pm.test(\"Successful GET request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"var schema = [\"id\", \"author\", \"parent\", \"tags\", \"type\", \"body\", \"title\", \"date\", \"upvotes\", \"downvotes\"];",
+							"var index = 0;",
+							"jsonObject.forEach(function(x){",
+							"    var ok = true;",
+							"    schema.forEach(function(schemaObj){",
+							"        ok = ok && (schemaObj in x);",
+							"    });",
+							"    tests[\"Test Data Object Structrue \" +index]=  ok;",
+							"    index++;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"postId\": 1,\n\t\"isUpVote\": true\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/posts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"posts"
+					]
+				},
+				"description": "Get Request Test"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8081/posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34ea7d85-9402-41dd-bddb-9bc3d13abf1d",
+						"exec": [
+							"pm.test(\"Successful GET request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([401]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"postId\": 1,\n\t\"isUpVote\": true\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/posts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"posts"
+					]
+				},
+				"description": "Get Request Unauthorized"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8081/posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34ea7d85-9402-41dd-bddb-9bc3d13abf1d",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"var schema = [\"id\", \"author\", \"parent\", \"tags\", \"type\", \"body\", \"title\", \"date\", \"upvotes\", \"downvotes\"];",
+							"var index = 0;",
+							"var x = jsonObject;",
+							"var ok = true;",
+							"schema.forEach(function(schemaObj){",
+							"    ok = ok && (schemaObj in x);",
+							"});",
+							"tests[\"Test Data Object Structrue \" +index]=  ok;",
+							"index++;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": -1,\n        \"author\": {\n            \"id\": 2\n        },\n        \"parent\": null,\n        \"tags\": [\"Testing\"],\n        \"type\": \"QUESTION\",\n        \"body\": \"POSTMAN TEST QUESTION?\",\n        \"title\": \"POSTMAN TEST QUESTION\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/posts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"posts"
+					]
+				},
+				"description": "Post PUT REQUEST"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8081/posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34ea7d85-9402-41dd-bddb-9bc3d13abf1d",
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"var schema = [\"id\", \"author\", \"parent\", \"tags\", \"type\", \"body\", \"title\", \"date\", \"upvotes\", \"downvotes\"];",
+							"var index = 0;",
+							"var x = jsonObject;",
+							"var ok = true;",
+							"schema.forEach(function(schemaObj){",
+							"    ok = ok && (schemaObj in x);",
+							"});",
+							"tests[\"Test Data Object Structrue \" +index]=  ok;",
+							"index++;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 47,\n        \"body\": \"POSTMAN TEST QUESTION YEEEAH?\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/posts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"posts"
+					]
+				},
+				"description": "PUT REQUESST"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8081/posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34ea7d85-9402-41dd-bddb-9bc3d13abf1d",
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"var schema = [\"id\", \"author\", \"parent\", \"tags\", \"type\", \"body\", \"title\", \"date\", \"upvotes\", \"downvotes\"];",
+							"var index = 0;",
+							"var x = jsonObject;",
+							"var ok = true;",
+							"schema.forEach(function(schemaObj){",
+							"    ok = ok && (schemaObj in x);",
+							"});",
+							"tests[\"Test Data Object Structrue \" +index]=  ok;",
+							"index++;",
+							"tests[\"Test Data updated Data\"] = jsonObject[\"body\"]===\"Test YEs?\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 47,\n        \"body\": \"Test YEs?\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/posts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"posts"
+					]
+				},
+				"description": "PUT REQUEST YES"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8081/posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34ea7d85-9402-41dd-bddb-9bc3d13abf1d",
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([401]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 47\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/posts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"posts"
+					]
+				},
+				"description": "Unauthorized Delete"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8081/posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34ea7d85-9402-41dd-bddb-9bc3d13abf1d",
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "superuser",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "superuser",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 47\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/posts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"posts"
+					]
+				},
+				"description": "Authorized Delete"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8081/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34ea7d85-9402-41dd-bddb-9bc3d13abf1d",
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"var jsonObject = JSON.parse(responseBody);",
+							"var schema = [\"id\", \"username\", \"password\", \"email\", \"permission\", \"banned\", \"score\"];",
+							"var index = 0;",
+							"var x = jsonObject;",
+							"var ok = true;",
+							"schema.forEach(function(schemaObj){",
+							"    ok = ok && (schemaObj in x);",
+							"});",
+							"tests[\"Test Data Object Structrue \" +index]=  ok;",
+							"index++;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"username\": \"superuser\",\n        \"password\": \"superuser\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Test Login Data Request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8081/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34ea7d85-9402-41dd-bddb-9bc3d13abf1d",
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([401]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"username\": \"superuser\",\n        \"password\": \"random\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Invalid Login Request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8081/posts/vote",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34ea7d85-9402-41dd-bddb-9bc3d13abf1d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"var schema = [\"id\", \"author\", \"parent\", \"tags\", \"type\", \"body\", \"title\", \"date\", \"upvotes\", \"downvotes\"];",
+							"var index = 0;",
+							"var x = jsonObject;",
+							"var ok = true;",
+							"schema.forEach(function(schemaObj){",
+							"    ok = ok && (schemaObj in x);",
+							"});",
+							"tests[\"Test Data Object Structrue \" +index]=  ok;",
+							"index++;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "superuser",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "superuser",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \t\"postId\": 44,\n        \"isUpVote\": true\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/posts/vote",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"posts",
+						"vote"
+					]
+				},
+				"description": "Test Voting"
+			},
+			"response": []
+		}
+	]
+}

@@ -11,7 +11,7 @@ const Form = ({type, propertyContentMapper, username, email, password, onPropert
                 {(type === formTypeRegistration)?
                     <div className="field">
                         <p className="control has-icons-left has-icons-right">
-                            <input className="input" type="email" placeholder="Email" value={email}
+                            <input className="input " type="email" placeholder="Email" value={email}
                                    onChange={(e)=>onPropertyChangeEvent(propertyContentMapper.email, e.target.value)}/>
                             <span className="icon is-small is-left">
                                 <i className="fas fa-envelope"/>
@@ -22,7 +22,7 @@ const Form = ({type, propertyContentMapper, username, email, password, onPropert
                 }
                 <div className="field">
                     <p className="control has-icons-left has-icons-right">
-                        <input className="input" type="text" placeholder="Username" value={username}
+                        <input className="input" type="text" placeholder="Username" value={username} data-cy="form_username"
                                onChange={(e)=>onPropertyChangeEvent(propertyContentMapper.username, e.target.value)}/>
                         <span className="icon is-small is-left">
                                 <i className="fas fa-users"/>
@@ -31,14 +31,14 @@ const Form = ({type, propertyContentMapper, username, email, password, onPropert
                 </div>
                 <div className="field">
                     <p className="control has-icons-left">
-                        <input className="input" type="password" placeholder="Password" value={password}
+                        <input className="input" type="password" placeholder="Password" value={password} data-cy="form_password"
                                onChange={(e)=>onPropertyChangeEvent(propertyContentMapper.password, e.target.value)}/>
                         <span className="icon is-small is-left"><i className="fas fa-lock"/></span>
                     </p>
                 </div>
                 <div className="field">
                     <p className="control">
-                        <button className="button is-success" onClick={onActionEvent}>
+                        <button className="button is-success" onClick={onActionEvent} data-cy="form_button">
                             {(type !== formTypeRegistration)?"Login":"Register"}
                         </button>
                     </p>
